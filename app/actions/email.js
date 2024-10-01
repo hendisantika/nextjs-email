@@ -33,14 +33,14 @@ export async function sendEmail(formData) {
             const message = `Dear ${fullName}, Thank you for subscribing to tapaScript's Newsletter. The door towards the abundance of knowldge is now open. Enjoy.`;
 
             const sentInfo = await resend.emails.send({
-                from: "noreply@noreply.tapascript.io",
+                from: "no-reply@jvm.my.id",
                 to: email,
-                subject: "Congratulations!!! You have subscribed to tapaScript's Newsletter.",
+                subject: "Congratulations!!! You have subscribed to JVM ID's Newsletter.",
                 react: EmailTemplate({message}),
             });
 
         } else {
-            throw new Error(`${email} subscribed to tapaScript already!`)
+            throw new Error(`${email} subscribed to JVM ID already!`)
         }
 
         revalidatePath('/');
